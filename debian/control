@@ -10,6 +10,7 @@ Build-Depends:
     libjson-c-dev,
     libpcap-dev,
     texinfo,
+    automake (>= 1.14),
 Standards-Version: 4.1.3
 Homepage: https://github.com/WaverleyLabs/fwknop
 
