@@ -1,0 +1,16 @@
+sdp-fwknop (0.1.0-1) unstable; urgency=low
+
+  * Initial release; based on Open source SDP developed by on Waverley Labs
+    - URL: https://github.com/WaverleyLabs/fwknop
+    - Date: 2020/11/29
+    - Upstream commit: 3e223e290d2b4914ddfc05363a9d0ccddd5164c8
+  * Updated configs for SDP Gateway
+    - /etc/fwknop/gate.fwknoprc
+    - /etc/fwknop/gate_sdp_ctrl_client.conf
+  * Updated configs for SDP Client
+    - /etc/fwknop/client/SAMPLE.fwknoprc
+    - /etc/fwknop/client/SAMPLE_sdp_ctrl_client.conf
+  * Added sample deny-all rules for iptables on SDP Gateway
+  * Added systemd unit file and init script for SDP Gateway
+
+ -- Takahiro Ono <takahiro.ono@example.com>  Sun, 29 Nov 2020 00:45:43 +0000

@@ -1,0 +1,3 @@
+usr/bin/fwknop
+client/SAMPLE.fwknoprc etc/fwknop/client/
+client/SAMPLE_sdp_ctrl_client.conf etc/fwknop/client/

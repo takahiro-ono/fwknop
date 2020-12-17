@@ -1,0 +1,5 @@
+# Local package; No corresponding Intent-To-Package bug
+new-package-should-close-itp-bug
+
+# Use different package name to distinguish from original fwknop/libfko2
+package-name-doesnt-match-sonames libfko2

@@ -1,0 +1,7 @@
+usr/sbin/fwknopd
+etc/fwknop/access.conf
+etc/fwknop/fwknopd.conf
+etc/fwknop/gate.fwknoprc
+etc/fwknop/gate_sdp_ctrl_client.conf
+etc/fwknop/iptables/SAMPLE.rules.v4
+etc/fwknop/iptables/SAMPLE.rules.v6

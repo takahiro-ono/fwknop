@@ -1,0 +1,8 @@
+# Local package; No corresponding Intent-To-Package bug
+new-package-should-close-itp-bug
+
+# More strict permission than default
+non-standard-file-perm etc/fwknop/access.conf 0600 != 0644
+non-standard-file-perm etc/fwknop/fwknopd.conf 0600 != 0644
+non-standard-file-perm etc/fwknop/gate.fwknoprc 0600 != 0644
+non-standard-file-perm etc/fwknop/gate_sdp_ctrl_client.conf 0600 != 0644
