@@ -1,3 +1,9 @@
+sdp-fwknop (0.1.0-2) UNRELEASED; urgency=low
+
+  * Removed libfko.la from sdp-libfko2-dev
+
+ -- Takahiro Ono <takahiro.ono@example.com>  Thu, 17 Dec 2020 16:48:15 +0000
+
 sdp-fwknop (0.1.0-1) unstable; urgency=low
 
   * Initial release; based on Open source SDP developed by on Waverley Labs
