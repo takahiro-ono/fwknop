@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-iptables=/usr/sbin/iptables
+
+override_dh_install:
+	dh_install
+	#
+	# Create dummy certificates
+	mkdir -p debian/sdp-fwknop-gateway/etc/fwknop/certs
+	touch \
+		debian/sdp-fwknop-gateway/etc/fwknop/certs/ca.crt \
+		debian/sdp-fwknop-gateway/etc/fwknop/certs/gateway.crt \
+		debian/sdp-fwknop-gateway/etc/fwknop/certs/gateway.key \
+		debian/sdp-fwknop-client/etc/fwknop/client/ca.crt
+
+override_dh_installinit:
+	dh_installinit --no-start -- defaults-disabled
+
+override_dh_installsystemd:
+	dh_installsystemd --no-start --no-enable
+
+override_dh_fixperms:
+	dh_fixperms \
+		--exclude /etc/fwknop/access.conf \
+		--exclude /etc/fwknop/fwknopd.conf \
+		--exclude /etc/fwknop/gate.fwknoprc \
+		--exclude /etc/fwknop/gate_sdp_ctrl_client.conf

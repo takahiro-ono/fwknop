@@ -1,0 +1,75 @@
+Source: sdp-fwknop
+Section: admin
+Priority: optional
+Maintainer: Takahiro Ono <takahiro.ono@example.com>
+Build-Depends:
+    debhelper (>= 11),
+    openssl,
+    libssl-dev,
+    libjson-c3,
+    libjson-c-dev,
+    libpcap-dev,
+    texinfo,
+Standards-Version: 4.1.3
+Homepage: https://github.com/WaverleyLabs/fwknop
+
+Package: sdp-fwknop-gateway
+Architecture: any
+Pre-Depends:
+    ${misc:Pre-Depends},
+Depends:
+    sdp-libfko2 (= ${binary:Version}),
+    iptables,
+    conntrack,
+    rsyslog,
+    lsb-base,
+    adduser,
+    init-system-helpers (>= 1.50),
+    ${shlibs:Depends},
+    ${misc:Depends},
+Recommends:
+    iptables-persistent,
+Conflicts:
+    fwknop-server,
+Description: Open source SDP Gateway
+ Open source SDP developed by Waverley Labs
+
+Package: sdp-fwknop-client
+Architecture: any
+Pre-Depends:
+    ${misc:Pre-Depends},
+Depends:
+    sdp-libfko2 (= ${binary:Version}),
+    ${shlibs:Depends},
+    ${misc:Depends},
+Conflicts:
+    fwknop-client,
+Description: Open source SDP Client
+ Open source SDP developed by Waverley Labs
+
+Package: sdp-libfko2
+Section: libs
+Architecture: any
+Pre-Depends:
+    ${misc:Pre-Depends},
+Depends:
+    ${shlibs:Depends},
+    ${misc:Depends},
+Conflicts:
+    libfko3,
+    libfko2,
+Description: Open source SDP Gateway/Client - shared library
+ Open source SDP developed by Waverley Labs
+
+Package: sdp-libfko2-dev
+Section: libdevel
+Architecture: any
+Pre-Depends:
+    ${misc:Pre-Depends},
+Depends:
+    sdp-libfko2 (= ${binary:Version}),
+    ${misc:Depends},
+Conflicts:
+    libfko3-dev
+Description: Open source SDP Gateway/Client - development library
+ Open source SDP developed by Waverley Labs

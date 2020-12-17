@@ -1,0 +1,13 @@
+[Unit]
+Description=SDP Gateway
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/sdp-fwknop-gateway/fwknopd.pid
+ExecStart=/usr/sbin/fwknopd --syslog-enable --run-dir /run/sdp-fwknop-gateway
+KillMode=control-group
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
